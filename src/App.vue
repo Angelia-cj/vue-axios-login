@@ -3,11 +3,12 @@
  * @Author: changjia
  * @Date: 2021-12-04 14:29:00
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-04 14:40:23
+ * @LastEditTime: 2021-12-06 21:24:56
 -->
 <template>
   <div id="app">
-    <router-view></router-view>
+    <!-- <router-link to="/login">登陆</router-link> -->
+    <router-view ></router-view>
   </div>
 </template>
 

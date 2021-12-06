@@ -3,7 +3,7 @@
  * @Author: changjia
  * @Date: 2021-12-04 14:38:09
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-04 14:59:26
+ * @LastEditTime: 2021-12-06 21:15:28
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -28,7 +28,7 @@ const mutations = {
     window.sessionStorage.setItem('user', data)
   },
   // 退出登录
-  LOGOUT: (state, data) => {
+  LOGOUT: (state) => {
     // 退出的时候要清除token
     state.token = null
     state.use = null
@@ -37,7 +37,7 @@ const mutations = {
   }
 }
 
-const action = {
+const actions = {
 
 }
 
