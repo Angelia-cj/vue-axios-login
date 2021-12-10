@@ -3,7 +3,7 @@
  * @Author: changjia
  * @Date: 2021-12-04 14:29:00
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-08 18:57:54
+ * @LastEditTime: 2021-12-10 17:34:39
  */
 import Vue from 'vue'
 
@@ -14,6 +14,11 @@ import router from './router'
 import store from './store'
 
 Vue.use(ElementUI)
+
+if (process.env.NODE_ENV === 'production') {
+  const { mockXHR } = require('../mock')
+  mockXHR()
+}
 
 Vue.config.productionTip = false
 

@@ -3,7 +3,7 @@
  * @Author: changjia
  * @Date: 2021-12-04 14:37:28
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-08 22:28:41
+ * @LastEditTime: 2021-12-10 18:09:46
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -23,6 +23,10 @@ export const routes = [{
     name: 'Home',
     component: () =>
       import ('../views/home/index')
+  },
+  {
+    path: '/',
+    redirect: '/login'
   }
 ]
 

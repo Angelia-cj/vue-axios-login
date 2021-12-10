@@ -3,7 +3,7 @@
  * @Author: changjia
  * @Date: 2021-12-08 15:43:15
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-08 22:09:04
+ * @LastEditTime: 2021-12-10 18:08:27
  */
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
@@ -12,7 +12,7 @@ import { getToken } from '@/utils/auth'
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: process_env.VUE_APP_BASE_API,
+  baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
 })
 
@@ -38,7 +38,7 @@ service.interceptors.response.use(
       // 如果返回码不是20000，则判定为错误。
     if (res.code !== 2000) {
       Message({
-          message: res.message || '错误！',
+          message: res.message || '错误!',
           type: 'error',
           duration: 5 * 1000
         })
@@ -54,13 +54,13 @@ service.interceptors.response.use(
           })
         })
       }
-      return Promise.reject(new Error(res.message || '错误！'))
+      return Promise.reject(new Error(res.message || '错误!'))
     } else {
       return res
     }
   },
   error => {
-    console.log('错误：' + error);
+    console.log('错误: ' + error);
     Message({
       message: error.message,
       type: 'error',

@@ -3,7 +3,7 @@
  * @Author: changjia
  * @Date: 2021-12-08 19:01:17
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-09 21:13:16
+ * @LastEditTime: 2021-12-10 18:05:21
  */
 import { login, getInfo, logout } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
@@ -56,7 +56,7 @@ const actions = {
       getInfo(state.token).then(response => {
         const { data } = response
         if (!data) {
-          return reject('验证失败，请重新登录！')
+          return reject('验证失败，请重新登录!')
         }
         const { name, avatar } = data
         commit('SET_NAME', name)
@@ -71,7 +71,7 @@ const actions = {
   // logout
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
-      logout(state, token).then(() => {
+      logout(state.token).then(() => {
         removeToken()
         resetRouter()
         commit('RESET_TOKEN')

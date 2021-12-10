@@ -3,7 +3,7 @@
  * @Author: changjia
  * @Date: 2021-12-04 14:36:48
  * @LastEditors: changjia
- * @LastEditTime: 2021-12-06 21:38:51
+ * @LastEditTime: 2021-12-10 18:16:23
 -->
 <template>
   <div class="login-container">
@@ -24,22 +24,18 @@ export default {
   },
   methods: {
     login() {
-      this.$axios.get('http://localhost:8080/#/login',{
-        params: {
-          username:this.username,
-          password: this.password
-        }
-      }).then(res=>{
-        if ( this.username ==='admin' && this.password === '111111') {
-          this.$router.push({name:'Home'})
-        } else {
-          return res.error
-        }
-      }).catch(err=>{
-        console.log(err);
-      })
+      const userInfo = {
+        username:this.username,
+        password:this.password
+      }
+      console.log(userInfo);
+      // this.$store.dispatch('user/login',userInfo).then(() => {
+      //   this.$router.push({name:'Home'})
+      // }).catch(error => {
+      //   console.log(error);
+      // })
     }
-  },
+  }
 }
 </script>
 
